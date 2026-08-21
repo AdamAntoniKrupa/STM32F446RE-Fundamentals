@@ -1,0 +1,6 @@
+# Use Unix line endings for repository text files
+* text=auto eol=lf
+
+# Windows command scripts require CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
