@@ -1,6 +1,15 @@
-# Use Unix line endings for repository text files
+# Keep text files consistent across Windows and Linux/CI.
 * text=auto eol=lf
 
-# Windows command scripts require CRLF
+# Windows command files conventionally use CRLF.
 *.bat text eol=crlf
 *.cmd text eol=crlf
+
+# Binary files must never be modified by line-ending conversion.
+*.bin binary
+*.elf binary
+*.hex binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pdf binary

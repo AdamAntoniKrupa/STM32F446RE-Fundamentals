@@ -23,6 +23,10 @@ set(PROJECT_NAME Fundamentals)
 # Create an executable object type
 add_executable(${PROJECT_NAME})
 
+include(cmake/CompilerWarnings.cmake)
+
+enable_project_warnings(${CMAKE_PROJECT_NAME})
+
 # Include additional CMake files for flags, components, and files
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/flags.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/components.cmake)
@@ -49,7 +53,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 )
 
 # Linker options
-target_link_options(${PROJECT_NAME} PRIVATE 
+target_link_options(${PROJECT_NAME} PRIVATE
   # User defined linker options
 )
 

@@ -1,0 +1,53 @@
+name: Firmware build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ARM GCC / Debug
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install ARM toolchain and build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            cmake \
+            gcc-arm-none-eabi \
+            ninja-build
+
+      - name: Print tool versions
+        run: |
+          cmake --version
+          arm-none-eabi-gcc --version
+          ninja --version
+
+      - name: Configure Debug build
+        run: cmake --preset Debug
+
+      - name: Build firmware
+        run: cmake --build --preset Debug --parallel
+
+      - name: Report firmware size
+        shell: bash
+        run: |
+          mapfile -t elf_files < <(find . -type f -name '*.elf' -not -path './.git/*' -print)
+
+          if (( ${#elf_files[@]} == 0 )); then
+            echo "No ELF file was produced by the build."
+            exit 1
+          fi
+
+          arm-none-eabi-size "${elf_files[@]}"

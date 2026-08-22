@@ -1,0 +1,81 @@
+name: Exercise or feature
+description: Plan one embedded exercise or a small firmware feature.
+title: "[Exercise] "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Define the expected behaviour before implementation. Keep one issue focused on one verifiable result.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What should be learned or achieved?
+      placeholder: Implement GPIO output control using STM32 registers and verify the output timing on hardware.
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: List the functional and technical requirements.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: State observable conditions that must be true before this issue can be closed.
+      value: |
+        - [ ] Firmware builds without new warnings.
+        - [ ] Expected behaviour is verified on NUCLEO-F446RE.
+        - [ ] At least one boundary or error case is checked when applicable.
+        - [ ] Verification evidence is recorded.
+    validations:
+      required: true
+
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware
+      description: Board and any additional equipment required for verification.
+      value: NUCLEO-F446RE / STM32F446RET6
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-plan
+    attributes:
+      label: Test plan
+      description: Describe how each acceptance criterion will be verified.
+      placeholder: |
+        1. Build and flash the Debug firmware.
+        2. Observe...
+        3. Repeat with...
+    validations:
+      required: true
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: Documentation and evidence
+      description: Identify what should be updated or attached after implementation.
+      value: |
+        - [ ] Exercise documentation or README updated.
+        - [ ] Relevant learning/debug log entry added.
+        - [ ] UART log, debugger result, photo, or measurement attached when useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and constraints
+      description: Optional assumptions, limitations, datasheet references, or ideas for later work.
