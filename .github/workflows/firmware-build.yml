@@ -26,6 +26,8 @@ jobs:
           sudo apt-get install --yes --no-install-recommends \
             cmake \
             gcc-arm-none-eabi \
+            libnewlib-arm-none-eabi \
+            libstdc++-arm-none-eabi-newlib \
             ninja-build
 
       - name: Print tool versions
