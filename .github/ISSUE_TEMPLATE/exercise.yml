@@ -18,13 +18,41 @@ body:
       required: true
 
   - type: textarea
+    id: protected-learning-target
+    attributes:
+      label: Protected learning target and AI boundary
+      description: What must be designed, implemented and explained independently? What assistance may AI provide?
+      placeholder: |
+        Protected target:
+        - Derive and implement the GPIO register configuration independently.
+
+        Allowed AI assistance:
+        - Documentation navigation, guiding questions and post-implementation review.
+    validations:
+      required: true
+
+  - type: textarea
+    id: initial-plan
+    attributes:
+      label: Initial plan and primary sources
+      description: Describe the initial approach and identify the documentation that should be consulted.
+      placeholder: |
+        Initial approach:
+
+        Primary documentation:
+        - STM32F446 reference manual, section ...
+        - NUCLEO-F446RE user manual, section ...
+    validations:
+      required: true
+
+  - type: textarea
     id: requirements
     attributes:
       label: Requirements
       description: List the functional and technical requirements.
       value: |
-        - [ ] 
-        - [ ] 
+        - [ ]
+        - [ ]
     validations:
       required: true
 

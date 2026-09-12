@@ -8,6 +8,38 @@ Most hardware exercises target the **NUCLEO-F446RE** development board with the 
 
 > This is a learning repository rather than a single finished application. Larger and more complete projects are maintained in separate repositories.
 
+## Current status
+
+The repository currently contains the initial STM32F446RE project scaffold, CMake configuration, compiler warnings, formatting rules and a working GitHub Actions build.
+
+The planned labs, tests and additional documentation will be introduced gradually when they are first needed. The directory structure described below represents the intended evolution of the repository rather than its current state.
+
+## Learning approach and AI use
+
+This repository is used both to learn embedded systems and to practise responsible AI-assisted engineering.
+
+Each exercise defines a protected learning target: the part that must be designed, implemented and explained independently. AI tools may support the surrounding work, but must not replace the skill currently being learned.
+
+AI tools may be used to:
+
+* locate and explain relevant documentation;
+* clarify concepts and ask guiding questions;
+* refine requirements and test plans;
+* review implementation plans, code, tests and documentation;
+* help interpret compiler errors, debugger state and measurements;
+* suggest additional experiments after an independent attempt.
+
+AI tools should not be used to:
+
+* implement the protected learning target before an independent attempt;
+* provide a ready-made peripheral configuration when that configuration is the subject being learned;
+* replace verification against primary documentation and physical hardware;
+* invent measurements, test results or technical conclusions.
+
+AI-generated code may be used outside the protected learning target only when it is reviewed, understood and verified before being committed.
+
+Completing an exercise requires being able to explain the relevant code, design decisions and verification results in one's own words.
+
 ## Objectives
 
 The main objectives of this repository are to:
@@ -58,7 +90,7 @@ The repository is intended to use:
 
 Detailed installation and configuration instructions are available in [`docs/setup.md`](docs/setup.md).
 
-## Repository structure
+## Planned repository structure
 
 ```text
 fundamentals/
@@ -232,11 +264,11 @@ These rules may be introduced gradually as the repository develops.
 
 ## Building
 
-Clone the repository:
+Configure and build the Debug firmware:
 
 ```bash
-git clone https://github.com/<github-username>/fundamentals.git
-cd fundamentals
+cmake --preset Debug
+cmake --build --preset Debug --parallel
 ```
 
 The exact build command depends on the selected lab. Detailed toolchain configuration and build instructions are described in [`docs/setup.md`](docs/setup.md).
@@ -273,11 +305,12 @@ ctest --preset host-debug
 
 ## Documentation
 
-Additional documentation is stored in the `docs` directory:
+Planned documentation includes:
 
-* [`setup.md`](docs/setup.md) — development environment, building, flashing and debugging;
-* [`learning-log.md`](docs/learning-log.md) — progress and technical conclusions from completed exercises;
-* [`debug-log.md`](docs/debug-log.md) — selected problems, investigation steps, root causes and solutions.
+* development environment setup;
+* learning log;
+* debugging log;
+* per-lab build, flashing and verification instructions.
 
 ## Project status
 
