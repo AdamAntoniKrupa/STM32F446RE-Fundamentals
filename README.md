@@ -88,7 +88,6 @@ The repository is intended to use:
 * a serial terminal;
 * host-side unit tests.
 
-```markdown
 Detailed installation and configuration instructions will be added when the first lab introduces the complete flashing and debugging workflow.
 
 ## Planned repository structure
@@ -270,24 +269,24 @@ Clone the repository:
 ```bash
 git clone https://github.com/AdamAntoniKrupa/STM32F446RE-Fundamentals.git
 cd STM32F446RE-Fundamentals
+```
 
-Configure and build the Debug firmware:
+Configure and build the current Debug firmware:
 
 ```bash
 cmake --preset Debug
 cmake --build --preset Debug --parallel
 ```
 
-The exact build command depends on the selected lab. Detailed toolchain configuration and build instructions are described in [`docs/setup.md`](docs/setup.md).
-
-Example CMake workflow:
+A Release configuration is also available:
 
 ```bash
-cmake --preset nucleo-f446re-debug
-cmake --build --preset nucleo-f446re-debug --target <lab-target>
+cmake --preset Release
+cmake --build --preset Release --parallel
 ```
 
-The repository currently produces a single Fundamentals.elf target. Lab-specific targets, flashing instructions and verification procedures will be added together with the individual labs.
+The repository currently produces a single `Fundamentals.elf` target. Lab-specific targets, flashing instructions and verification procedures will be added together with the individual labs.
+
 
 ## Testing
 
