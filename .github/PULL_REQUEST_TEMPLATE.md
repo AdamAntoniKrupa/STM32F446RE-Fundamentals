@@ -6,6 +6,24 @@
 
 Closes #
 
+## Learning ownership
+
+**Protected learning target:**
+
+<!-- What part of this task was completed independently? -->
+
+**AI assistance used:**
+
+<!-- Describe the role of AI. A prompt transcript is not required. Use "None" if applicable. -->
+
+**Independent verification:**
+
+<!-- What was checked against documentation, tests, debugger state or hardware? -->
+
+## What I learned
+
+<!-- Explain the most important technical conclusions in your own words. -->
+
 ## Changes
 
 - 
@@ -51,3 +69,5 @@ Closes #
 - [ ] I reviewed the diff before opening this PR.
 - [ ] The code follows the repository formatting rules.
 - [ ] The implementation satisfies the linked issue's acceptance criteria.
+- [ ] I can explain the task-relevant code, configuration and verification results.
+- [ ] Any AI-assisted changes were reviewed, understood and independently verified.
