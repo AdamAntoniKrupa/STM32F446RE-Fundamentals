@@ -88,12 +88,13 @@ The repository is intended to use:
 * a serial terminal;
 * host-side unit tests.
 
-Detailed installation and configuration instructions are available in [`docs/setup.md`](docs/setup.md).
+```markdown
+Detailed installation and configuration instructions will be added when the first lab introduces the complete flashing and debugging workflow.
 
 ## Planned repository structure
 
 ```text
-fundamentals/
+STM32F446RE-Fundamentals/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -264,6 +265,12 @@ These rules may be introduced gradually as the repository develops.
 
 ## Building
 
+Clone the repository:
+
+```bash
+git clone https://github.com/AdamAntoniKrupa/STM32F446RE-Fundamentals.git
+cd STM32F446RE-Fundamentals
+
 Configure and build the Debug firmware:
 
 ```bash
@@ -280,7 +287,7 @@ cmake --preset nucleo-f446re-debug
 cmake --build --preset nucleo-f446re-debug --target <lab-target>
 ```
 
-Individual lab documentation provides the correct build target and flashing procedure.
+The repository currently produces a single Fundamentals.elf target. Lab-specific targets, flashing instructions and verification procedures will be added together with the individual labs.
 
 ## Testing
 
@@ -295,13 +302,7 @@ The test suite may include:
 * Python tests communicating with the board through UART;
 * build and test checks executed in GitHub Actions.
 
-Example host test workflow:
-
-```bash
-cmake --preset host-debug
-cmake --build --preset host-debug
-ctest --preset host-debug
-```
+Host-side test presets have not been introduced yet. They will be added together with the first hardware-independent module.
 
 ## Documentation
 
@@ -322,4 +323,4 @@ Larger projects that combine multiple concepts into complete systems will be mai
 
 ## License
 
-See the [`LICENSE`](LICENSE) file for licensing information.
+Project-wide licensing has not yet been documented. Generated STMicroelectronics files retain their original copyright notices. Licensing will be addressed in a separate repository task.

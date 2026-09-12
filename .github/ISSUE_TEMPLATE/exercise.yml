@@ -50,9 +50,9 @@ body:
     attributes:
       label: Requirements
       description: List the functional and technical requirements.
-      value: |
-        - [ ]
-        - [ ]
+      placeholder: |
+        - [ ] Describe one functional requirement.
+        - [ ] Describe one technical requirement.
     validations:
       required: true
 
